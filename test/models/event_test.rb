@@ -20,9 +20,9 @@ class EventTest < ActiveSupport::TestCase
     Event.create kind: 'opening', starts_at: DateTime.parse("2014-08-07 12:30"), ends_at: DateTime.parse("2014-08-07 16:00"), weekly_recurring: true
     Event.create kind: 'opening', starts_at: DateTime.parse("2014-08-14 08:00"), ends_at: DateTime.parse("2014-08-14 13:00"), weekly_recurring: false
     Event.create kind: 'appointment', starts_at: DateTime.parse("2014-08-11 10:30"), ends_at: DateTime.parse("2014-08-11 11:30")
-	Event.create kind: 'appointment', starts_at: DateTime.parse("2014-08-14 13:00"), ends_at: DateTime.parse("2014-08-14 13:30")
-	Event.create kind: 'appointment', starts_at: DateTime.parse("2014-08-14 14:30"), ends_at: DateTime.parse("2014-08-14 15:00")
-	Event.create kind: 'appointment', starts_at: DateTime.parse("2014-08-14 08:30"), ends_at: DateTime.parse("2014-08-14 09:00")
+    Event.create kind: 'appointment', starts_at: DateTime.parse("2014-08-14 13:00"), ends_at: DateTime.parse("2014-08-14 13:30")
+    Event.create kind: 'appointment', starts_at: DateTime.parse("2014-08-14 14:30"), ends_at: DateTime.parse("2014-08-14 15:00")
+    Event.create kind: 'appointment', starts_at: DateTime.parse("2014-08-14 08:30"), ends_at: DateTime.parse("2014-08-14 09:00")
 
     availabilities = Event.availabilities DateTime.parse("2014-08-10")
     assert_equal Date.new(2014, 8, 10), availabilities[0][:date]
