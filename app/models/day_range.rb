@@ -24,11 +24,11 @@ class DayRange < Range
 	def all_slots(interval=30.minutes, &block)
 		return to_enum(:all_slots, interval) unless block_given?
 		time = self.begin
-    	while time < self.end
-      		yield Slot.new(time)
-      		time += interval
-      	end
-    end
+		while time < self.end
+			yield Slot.new(time)
+			time += interval
+		end
+	end
 
 	def in_openings?(openings, slot)
 		openings.any?{ |opening| slot.in_opening?(opening) }
