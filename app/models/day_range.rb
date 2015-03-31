@@ -13,7 +13,7 @@ class DayRange < Range
   private
 
   def available_slots(openings, appointments)
-    all_slots                                                   # retrieve all slot of the day
+    all_slots                                                 # retrieve all slot of the day
       .select{ |slot| in_openings?(openings, slot) }          # select slots that are contained within an opening event
       .reject{ |slot| in_appointments?(appointments, slot) }  # reject slots that intersect an appointment
       .map   { |slot| slot.to_s }                             # Convert to H:MM format
